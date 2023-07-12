@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   <title>Encriptador/Desencriptador</title>
 </head>
 <body>
@@ -13,40 +17,19 @@
     <section>
       <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto"></textarea>
     </section>
-    <section></section>
+      <div>
+        <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+      </div>
+        <div class="botones">
+          <buttton class ="btn-encriptar">Encriptar</buttton>
+          <buttton class ="btn-desencriptar">Desencriptar</buttton>
+        </div>
+    <section>
+      <textarea class="mensaje" cols="30" rows="10"></textarea>
+      <div>
+        <button class="copiar">Copiar</button>
+      </div>
+    </section>
   </main>
-</body>
-</html>
-
-
-  <script>
-    // Función para encriptar el texto
-    function encriptar() {
-      var texto = document.getElementById("texto").value;
-      var textoEncriptado = btoa(texto);
-      document.getElementById("resultado").value = textoEncriptado;
-    }
-    
-    // Función para desencriptar el texto
-    function desencriptar() {
-      var textoEncriptado = document.getElementById("resultado").value;
-      var texto = atob(textoEncriptado);
-      document.getElementById("texto").value = texto;
-    }
-  </script>
-</head>
-<body>
-  <h1>Encriptador/Desencriptador</h1>
-  
-  <label for="texto">Texto:</label>
-  <input type="text" id="texto" />
-  
-  <button onclick="encriptar()">Encriptar</button>
-  <button onclick="desencriptar()">Desencriptar</button>
-  
-  <br><br>
-  
-  <label for="resultado">Resultado:</label>
-  <textarea id="resultado" rows="5" cols="40"></textarea>
 </body>
 </html>
