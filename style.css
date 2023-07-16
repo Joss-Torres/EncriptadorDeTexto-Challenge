@@ -25,3 +25,18 @@ main{
     .text-area:focus{
         outline: none;
     }
+.mensaje{
+    background: white;
+    background-image: url("/Images/muestra.jpg");
+    background-repeat: no-repeat;
+    border:none;
+    border-radius: 24px;
+    color: #0A3B71;
+    margin-left: 98px;
+    margin-top: 20px;
+    padding-left: 20px;
+    position: fixed;
+}
+.mensaje:focus{
+    outline:none;
+}
