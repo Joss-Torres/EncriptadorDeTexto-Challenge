@@ -4,7 +4,6 @@
     font-weight: 400;
     font-size: 25px;
     line-height: 150%;
-    overflow: hidden;
 }
 .logo{
     padding-top: 30px;
@@ -19,7 +18,7 @@ main{
 .text-area{
     border: none;
     color: #0A3B71;
-    margin-top: 30px;
+    margin-top: 90px;
     text-transform: lowercase;
 }
 ::placeholder{color:#0A3B71;}
@@ -31,7 +30,7 @@ main{
     background-image: url("/Images/muestra.jpg");
     background-repeat: no-repeat;
     border:none;
-    border-radius: 20px;
+    border-radius: 24px;
     color: #0A3B71;
     margin-left: 98px;
     margin-top: 20px;
@@ -41,6 +40,7 @@ main{
 .mensaje:focus{
     outline:none;
 }
+
 .botones{
     display: flex;
     margin-top:18px;
@@ -48,11 +48,11 @@ main{
 .btn-encriptar{
     background-color: #0A3871;
     border: 1px solid #0A3871;
-    border-radius: 20px;
+    border-radius: 24px;
     color: white;
     cursor: pointer;
     height: 67px;
-    width: 150px;
+    width: 328px;
 }
 .btn-desencriptar{
     background: #cde0f5;
@@ -61,8 +61,8 @@ main{
     color: #0A3871;
     cursor: pointer;
     height: 67px;
-    width: 200px;
-    position: relative;
+    margin-left: 30px;
+    width: 328px;
 }
 .copiar{
     border: 1px solid #0A3B71;
@@ -73,7 +73,7 @@ main{
     width: 328px;
     margin-left: 110px;
     margin-top: 420px;
-    position:relative;
+    position:absolute;
     width:200px;
 }
 .informacion{
