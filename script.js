@@ -1,6 +1,11 @@
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
 
+function btnEncriptar(){
+    const textoEncriptado = encriptar(textArea.vale)
+    mensaje.value = textoEncriptado
+}
+
 //esta funcion debe estar dentro de la variable encriptar
 function encriptar(stringEncriptado){
     let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
