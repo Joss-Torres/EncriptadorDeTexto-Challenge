@@ -4,6 +4,8 @@ const mensaje = document.querySelector(".mensaje");
 function btnEncriptar(){
     const textoEncriptado = encriptar(textArea.vale)
     mensaje.value = textoEncriptado
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none"
 }
 
 //esta funcion debe estar dentro de la variable encriptar
