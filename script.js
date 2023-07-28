@@ -1,42 +1,65 @@
-const textArea = document.querySelector(".text-area");
-const mensaje = document.querySelector(".mensaje");
+function encriptar(){
+    let texto = document.getElementById("texto").value;
+    // // obtener el titulo del mensaje en una variable
+    let tituloMensaje = document.getElementById("titulo-mensaje");
+    // // Obtener el parrafo encriptado 
+    let parrafo = document.getElementById("parrafo");
+    // // Colocar imagen
+    let pensando = document.getElementById("pensando");
 
-function btnEncriptar(){
-    const textoEncriptado = encriptar(textArea.vale)
-    mensaje.value = textoEncriptado
-    textArea.value = "";
-    mensaje.style.backgroundImage = "none"
-}
+    let textoCifrado = texto
+            
+            .replace(/e/gi, "enter")
+            .replace(/i/gi, "imes")
+            .replace(/a/gi, "ai")
+            .replace(/o/gi, "ober")
+            .replace(/u/gi, "ufat");
 
-//esta funcion debe estar dentro de la variable encriptar
-function encriptar(stringEncriptado){
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    if(texto.length !=0){
+        document.getElementById("texto").value = textoCifrado; 
+        tituloMensaje.textContent = "Texto encriptado con exito"
+        parrafo.textContent = "";
+        pensando.src = "./Images/listo.png";
 
-    stringEncriptado=stringEncriptado.toLowerCase()
-    //iniciar de cero, debe ser menor que nestra matriz codigo y length es la matriz, para despues incrementar 
-    for(let i = 0; i<matrizCodigo.length; i++){
-        if(stringEncriptado.includes(matrizCodigo[i][0])){
-            stringEncriptado=stringEncriptado.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
-        }
     }
-    return stringEncriptado
-}
-
-function btnDesencriptar(){
-    const textoEncriptado = btnDesencriptar(textArea.vale)
-    mensaje.value = textoEncriptado
-    textArea.value = "";
-}
-function desencriptar(stringDesencriptado){
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
-
-    stringDesencriptado=stringDesencriptado.toLowerCase()
-    //iniciar de cero, debe ser menor que nestra matriz codigo y length es la matriz, para despues incrementar 
-    for(let i = 0; i<matrizCodigo.length; i++){
-        if(stringDesencriptado.includes(matrizCodigo[i][1])){
-            stringDesencriptado=stringDesencriptado.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0])
-        }
+    else{
+        pensando.src = "./Images/noencontrado.png"; 
+        tituloMensaje.textContent = "Ningun mensaje fue encontrado";
+        parrafo.textContent = "Ingrese el texto que se desea encriptar o desencriptar";
+        swal("Debes ingresar un texto", "warning");
     }
-    return stringDesencriptado
+    
 }
 
+function desencriptar(){
+    let texto = document.getElementById("texto").value;
+    // // obtener el titulo del mensaje en una variable
+    let tituloMensaje = document.getElementById("titulo-mensaje");
+    // // Obtener el parrafo encriptado 
+    let parrafo = document.getElementById("parrafo");
+    // // Colocar imagen
+    let pensando = document.getElementById("pensando");
+
+
+    let textoCifrado = texto
+            
+            .replace(/enter/gi, "e")
+            .replace(/imes/gi, "i")
+            .replace(/ai/gi, "a")
+            .replace(/ober/gi, "o")
+            .replace(/ufat/gi, "u");
+
+    if(texto.length !=0){
+        document.getElementById("texto").value = textoCifrado; 
+        tituloMensaje.textContent = "Texto desencriptado con exito"
+        parrafo.textContent = "";
+        pensando.src = "./Images/listo.png";
+
+    }
+    else{
+        pensando.src = "./Images/noencontrado.png"; 
+        tituloMensaje.textContent = "Ningun mensaje fue encontrado";
+        parrafo.textContent = "Ingrese el texto que se desea encriptar o desencriptar";
+        swal("Debes ingresar un texto", "warning");
+    }
+}
