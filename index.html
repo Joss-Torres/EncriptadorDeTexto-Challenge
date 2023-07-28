@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-  <title>Encriptador/Desencriptador</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Extraer o cargar los estilos en css-->
+    <link rel = "stylesheet" href="styles.css"/>
+    <link rel="shortcut icon" href="Imagenes/procesando.png" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Nombre que aparece en la pestaña-->
+    <title>Encriptado/Desencriptado</title>
+
 </head>
+<!-- Cuerpo -->
 <body>
-  <header>
-    <img class="logo" src="/images/logo.jpg" alt= "logo de alura" class="logo">
-  </header>  
-  <main>
-    <section>
-      <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto"></textarea>
-      <div>
-        <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
-      </div>
-        <div class="botones">
-          <button class ="btn-encriptar" onclick="btnEncriptar">Encriptar</button>
-          <button class ="btn-desencriptar" onclick="btnDesencriptar">Desencriptar</button>
+    <!-- Elaboracion del primer contenedor para encriptar-->
+    <div class="container">
+        <div class="encriptar">
+
+            <textarea name="texto" id="texto" class="texto" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+
+            <div class="especificacion">
+                <p>Solo letras minúsculas y sin acentos.</p>
+            </div>
+
+            <!-- Especificamos los botones que utilizaremos en una divicion -->
+            <div class="botones">
+                <!-- Al contar con diferentes estructoras es recomendable usar clases para asignarle diseños en css-->
+                <input type="button" class="btn-encriptar" value="Encriptar" onclick="encriptar()">
+                <input type="button" class="btn-desencriptar" value="Desencriptar" onclick="desencriptar()">
+            </div>
+            <!-- Cerramos la seccion o divicion de encriptado o accion -->
         </div>
-    </section>
-    <section>      
-      <textarea class="mensaje" cols="20" rows="10"></textarea>
-      <div>
-        <button class="copiar">Copiar</button>
-      </div>
-    </section>
-  </main>
-  <script src="/script.js"></script>
+    <!-- Contenedor para mostrar las acciones -->
+        <div class="encriptado">
+            <!-- Se abre la pestaña img para colocar algo de fonod (opcional)-->
+            <img src="Images/pensando.png" alt="" id="pensando">
+            <!-- Al contar con una imagen dentro del div, se recomienda hacer otro para mostrar texto sin que altere la posicion de la imagen -->
+            <div class="mensaje-encriptado" id="mensaje-encriptado">
+                <!-- H2 es solo el tamaño de la letra siendo solo una linea o hilera -->
+                <h2 id="titulo-mensaje"> Ningun mensaje ingresado </h2>
+                <p id="parrafo">Ingrese el texto que deseas encriptar o desencriptar</p>
+                <!-- Muestra el mensaje encriptado
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea> -->
+            </div>
+        </div>
+    </div>
 </body>
+
+<script src="script.js"></script>
+
 </html>
